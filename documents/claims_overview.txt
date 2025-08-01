@@ -1,0 +1,87 @@
+File: claims_overview.txt
+
+Module: Claims Management
+Document: Functional Overview
+Scope: Describes the end-to-end claim lifecycle for health and life insurance
+
+🏥 Claims Process Overview
+Claim Types Supported:
+
+Health: Cashless, Reimbursement
+
+Life: Death Claim, Maturity Payout, Rider-based claims (e.g., Accidental)
+
+🔄 Claims Lifecycle Stages
+Claim Intimation
+
+Via portal, app, call center, or email
+
+Basic details captured: Policy number, event date, cause, contact
+
+Document Collection
+
+Auto-list generated based on claim type
+
+Examples: Death certificate, hospital discharge summary, ID proof
+
+Claim Assessment
+
+Internal or TPA-based
+
+Verification of policy status, coverage, waiting periods, exclusions
+
+Medical Scrutiny (if applicable)
+
+Evaluation of hospitalization bills, diagnosis, treatment notes
+
+Trigger for second medical opinion if needed
+
+Decision Making
+
+Approve (Full/Partial), Reject, Query Raised
+
+SLA driven by policy terms (e.g., 10 days for Health, 15 days for Life)
+
+Payout Processing
+
+NEFT details validated, disbursement through core system
+
+Tax deductions handled per policy type
+
+🧑‍💼 Actors Involved
+Claimant / Beneficiary
+
+Claims Processor
+
+Medical Officer / Underwriter (for scrutiny)
+
+TPA (Third Party Administrator)
+
+Finance Ops
+
+🔐 Key Validations
+Policy active and in-force on date of event
+
+No pending premium beyond grace
+
+Claimed benefit covered in policy
+
+Documents uploaded match requirement checklist
+
+KYC + AML checks for payout above ₹1 lakh
+
+🧠 Known Issues / Observations
+Duplicate claims filed for same event
+
+Claims rejected due to incorrect hospital codes
+
+Delay in document upload results in SLA breach
+
+Mismatch in beneficiary name and bank records
+
+📈 Recent Trends
+Automation of hospital bill parsing using OCR
+
+Image-based fraud detection being piloted
+
+Rules engine for instant approval of low-value claims

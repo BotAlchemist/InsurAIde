@@ -1,0 +1,53 @@
+File: policy_enhancement_history.txt
+
+Module: Policy Issuance
+Document: Enhancement History
+Scope: UI/UX changes, validations, business logic, field additions
+
+📅 Enhancement Log
+[Apr 2024]
+
+Introduced “Alternate Contact Number” field in nominee section
+
+Marked field as optional with 10-digit validation
+
+Field reflected in policy PDF, proposal form, and customer portal
+
+[Dec 2023]
+
+Added “Date of Birth” field for Nominee
+
+Enabled age-based validations for specific plan types
+
+Updated proposal screen to dynamically show nominee age
+
+[Sep 2023]
+
+Enabled dynamic rider list based on age and plan selected
+
+Example: “Accidental Rider” only available for age < 60
+
+[Jul 2023]
+
+Integrated Aadhaar eKYC module on proposer screen
+
+Added option to pre-fill proposer details using eKYC response
+
+[Feb 2023]
+
+Enabled multi-nominee support with dynamic rows
+
+Share % validation logic added to ensure total = 100%
+
+[Nov 2022]
+
+Policy issuance trigger changed to occur after payment confirmation instead of before
+
+Added logic to handle payment gateway timeout scenarios
+
+[Aug 2022]
+
+Revised premium calculation formula to include service tax and cess breakdown
+
+Added tooltip on “Premium Amount” field to show split
+

@@ -1,0 +1,73 @@
+File: policy_business_rules.txt
+
+Module: Policy Issuance
+Document: Core Business Rules
+Scope: Rules applied during policy proposal, underwriting, and issuance
+
+📌 Proposer Rules
+Proposer must be between 18 and 65 years old
+
+Mobile number is mandatory and must be 10 digits
+
+PAN is mandatory if sum assured > ₹10 lakhs
+
+Email ID required for digital policy delivery
+
+📌 Insured Rules
+If insured ≠ proposer, relationship must be specified
+
+For minors, proposer must be a parent or legal guardian
+
+Multiple insured lives not allowed under term plan
+
+📌 Nominee Rules
+At least one nominee is mandatory
+
+Share % across nominees must total 100%
+
+Allowed relationships: Spouse, Child, Parent, Sibling, Other
+
+Contact number and alternate contact are optional
+
+Alternate contact must be exactly 10 digits if entered
+
+📌 Sum Assured Rules
+Minimum SA for term plan: ₹5 lakhs
+
+Maximum SA: ₹1 crore (subject to underwriting)
+
+SA limits vary based on proposer age and income
+
+📌 Underwriting (STP) Rules
+STP allowed if:
+
+Age ≤ 45
+
+Sum Assured ≤ ₹25 lakhs
+
+No medical history
+
+No riders selected
+
+Manual underwriting triggered for:
+
+Higher SA
+
+Older age
+
+Medical disclosures
+
+Critical illness rider selection
+
+📌 Policy Issuance Rules
+Issuance triggered only after:
+
+Proposal submitted
+
+Payment successful
+
+Underwriting complete
+
+All documents (policy bond, BI, etc.) generated post-issuance
+
+Audit trail entry created at each step

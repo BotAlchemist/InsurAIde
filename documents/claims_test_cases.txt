@@ -1,0 +1,67 @@
+File: claims_test_cases.txt
+
+Module: Claims Management
+Document: Functional Test Cases
+Scope: End-to-end scenarios from intimation to payout
+
+✅ Test Case 1: Intimate Claim with Valid Data
+Input: Policy number active, valid hospital, cause = Illness
+
+Action: Fill form, upload mandatory documents, submit
+
+Expected Result: Claim created successfully; claim ID generated
+
+✅ Test Case 2: Policy Lapsed on Event Date
+Input: Policy status = Lapsed on date of claim
+
+Action: Submit claim
+
+Expected Result: System blocks submission with message “Policy not active on event date”
+
+✅ Test Case 3: Duplicate Claim Entry
+Input: Same policy, same event date
+
+Action: Intimate second claim
+
+Expected Result: Error – “Duplicate claim already exists for this policy and date”
+
+✅ Test Case 4: Upload Mandatory Documents
+Action: Skip death certificate for death claim
+
+Expected Result: Submission blocked; field highlighted in red
+
+✅ Test Case 5: Query Raised and Re-submission
+Action: Approver raises query for missing KYC; claimant re-uploads and resubmits
+
+Expected Result: Claim status updates to “Query Raised” → “Submitted Again”
+
+✅ Test Case 6: Partial Approval Scenario
+Input: Claimed = ₹50,000; approved = ₹35,000
+
+Action: Approver selects “Partial Approval” and enters note
+
+Expected Result: System logs approval amount and reason; updates claim status
+
+✅ Test Case 7: Payout Failure Due to Invalid IFSC
+Input: IFSC = "XXX000000" (not in master)
+
+Action: Try payout
+
+Expected Result: System error – “Invalid IFSC code”
+
+✅ Test Case 8: SLA Breach Warning
+Action: Submit claim and delay processing for 15 days
+
+Expected Result: SLA bar turns red; claim flagged in dashboard
+
+✅ Test Case 9: Tax Deduction on Payout > ₹1 Lakh
+Input: Approved payout = ₹1,50,000
+
+Action: Proceed to disbursement
+
+Expected Result: TDS auto-calculated and shown in summary
+
+✅ Test Case 10: Auto-Populate Bank Name
+Input: Enter valid IFSC
+
+Expected Result: Bank Name auto-fills based on master mapping

@@ -1,0 +1,89 @@
+File: claims_functional_design.txt
+
+Module: Claims Management
+Document: Functional Design
+Scope: UI layout, field structure, dropdowns, business validations
+
+🖥️ Claim Intimation Screen
+Input Fields:
+Policy Number (Text, mandatory)
+
+Claimant Name (Text, auto-filled if policy linked)
+
+Date of Event (Date Picker, mandatory)
+
+Claim Type (Dropdown: Health – Cashless/Reimbursement, Life – Death/Maturity)
+
+Cause of Claim (Dropdown: Illness, Accident, Natural Death, Maturity, Others)
+
+Hospital Name (Text, mandatory for health claims)
+
+Hospital Type (Dropdown: Network, Non-network)
+
+Claim Amount (₹) (Numeric)
+
+Contact Number (10-digit validation)
+
+Email ID (Optional)
+
+📤 Document Upload Section
+Auto-list of required documents based on claim type
+
+Upload types: Image, PDF (Max size 5MB per file)
+
+Mandatory docs highlighted in red
+
+“View Uploaded” and “Remove” buttons for each document
+
+🔄 Claim Assessment Screen
+Fields Displayed:
+Policy status (Active/Lapsed/Terminated)
+
+Sum assured and benefit eligibility
+
+Waiting period status
+
+Past claims under same policy
+
+Red flags (if any) from fraud engine
+
+Actions:
+Mark claim as:
+
+Approved (Full/Partial)
+
+Rejected
+
+Query Raised (send back for more documents)
+
+Enter internal comments (Audit-trail logged)
+
+Upload decision letter template
+
+💵 Payout Processing Screen
+Beneficiary Name (Text – from policy)
+
+Bank Details:
+
+Account Number (Numeric)
+
+IFSC Code (Validated against master)
+
+Bank Name (Auto-populated)
+
+Tax Deduction (Yes/No) – System auto-computes if applicable
+
+Disbursement Mode: NEFT / UPI / Cheque
+
+“Disburse” button triggers finance API
+
+🛑 Validations Across Screens
+Policy must be active at date of event
+
+No duplicate claim open for same policy and event date
+
+Mandatory documents uploaded before submission
+
+Bank account must be verified before payout
+
+SLA status bar (Green/Amber/Red) based on TAT

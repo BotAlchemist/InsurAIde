@@ -1,0 +1,75 @@
+File: policy_functional_design.txt
+
+Module: Policy Issuance
+Screen: Proposal / Policy Entry Screen
+
+🔶 UI Sections & Fields
+1. Proposer Details
+Full Name (Text) – Mandatory
+
+Date of Birth (Date Picker) – Mandatory, Age 18–65
+
+Gender (Dropdown: Male, Female, Other) – Mandatory
+
+PAN Number (Text) – Optional
+
+Mobile Number (10-digit Numeric) – Mandatory
+
+Email ID (Text) – Optional
+
+2. Insured Details
+Same as proposer? (Checkbox)
+
+If not same:
+
+Name, DOB, Gender (same validations)
+
+Relationship to proposer (Dropdown)
+
+3. Nominee Details
+Nominee Name (Text) – Mandatory
+
+Date of Birth (Date) – Optional
+
+Relationship (Dropdown: Spouse, Parent, Child, Sibling, Other) – Mandatory
+
+Share % (Numeric, sum must equal 100 across nominees)
+
+Contact Number (10-digit Numeric) – Optional
+
+Alternate Contact Number (10-digit Numeric) – Optional
+
+Validation: Must be 10 digits if entered
+
+4. Policy Details
+Plan Type (Dropdown: Term, Endowment, ULIP) – Mandatory
+
+Sum Assured (Numeric) – Mandatory
+
+Policy Term (Dropdown) – Mandatory, based on age
+
+Premium Mode (Dropdown: Annual, Half-Yearly, Monthly)
+
+Riders (Checkbox List – optional based on Plan Type)
+
+🔶 Workflow Validations
+Age validation for proposer & insured (Min: 18, Max: 65 for Term Plan)
+
+Sum assured must match plan limits (e.g., Term plan min ₹5L)
+
+STP triggers if proposer age < 45, sum assured < ₹25L, and no riders
+
+Nominee share % validation (total must be 100%)
+
+Mandatory fields highlighted with red asterisk
+
+Submission disabled unless validations pass
+
+🔶 Actions Available
+Save Draft – Saves current state
+
+Calculate Premium – Auto-calculates based on inputs
+
+Submit for Issuance – Triggers payment gateway & UW checks
+
+Reset – Clears all fields

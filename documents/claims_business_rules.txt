@@ -1,0 +1,59 @@
+File: claims_business_rules.txt
+
+Module: Claims Management
+Document: Core Business Rules
+Scope: Rules governing claim acceptance, validation, and processing logic
+
+📌 Eligibility Rules
+Policy must be active and in-force on date of event
+
+No claim allowed during policy's waiting period (e.g., 90 days for health)
+
+Premium must be paid and cleared before event date
+
+Claimant must be the proposer, insured, or legal nominee
+
+📌 Documentation Rules
+Required documents depend on claim type (e.g., Death certificate for life, Discharge summary for health)
+
+All mandatory documents must be uploaded before processing
+
+Documents must be clear, legible, and in supported formats (PDF/JPG/PNG)
+
+Uploaded document date must be post event-date
+
+📌 Duplicate Claim Rules
+A claim is flagged as duplicate if:
+
+Same policy number
+
+Same event date
+
+Same cause of loss
+
+System should block duplicate unless user provides justification and override
+
+📌 Assessment & Approval Rules
+Claims < ₹10,000 can be auto-approved if STP conditions met
+
+Manual review required if:
+
+Previous claim within 30 days
+
+High-value claim (above ₹1 lakh)
+
+Hospital not in approved list
+
+Query can be raised only once per claim ID
+
+📌 Payout & Compliance Rules
+NEFT details must be verified before payout
+
+TDS applied if payout > ₹1,00,000 (as per IT Act)
+
+AML/KYC required for claims > ₹50,000
+
+Payout only allowed to verified beneficiary name in policy record
+
+Audit log must capture: claim status changes, payout action, document upload
+

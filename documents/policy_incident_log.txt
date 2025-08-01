@@ -1,0 +1,57 @@
+File: policy_incident_log.txt
+
+Module: Policy Issuance
+Document: Production Incident Log
+Scope: Notable defects/issues faced in live environment with RCA
+
+🔥 Incident Log
+[Incident ID: PI-2024-017]
+
+Date: 12-Apr-2024
+
+Issue: Policy bond missing nominee alternate contact
+
+Root Cause: Field added in database and UI but not mapped in PDF generation logic
+
+Resolution: Mapping updated in document template service
+
+[Incident ID: PI-2024-003]
+
+Date: 04-Feb-2024
+
+Issue: Policy failed to issue if nominee name had special characters (e.g., “&”)
+
+Root Cause: Improper character escaping in XML payload to policy engine
+
+Resolution: Sanitization added for nominee fields
+
+[Incident ID: PI-2023-021]
+
+Date: 15-Dec-2023
+
+Issue: STP logic bypassed for eligible policies with sum assured < ₹20L
+
+Root Cause: Plan master config incorrectly flagged new term plans as high risk
+
+Resolution: Plan configuration corrected
+
+[Incident ID: PI-2023-008]
+
+Date: 09-Aug-2023
+
+Issue: Premium calculation failure for riders on monthly mode
+
+Root Cause: Missing factor table in rider calculator service
+
+Resolution: Deployed patch with correct mode-wise factor entries
+
+[Incident ID: PI-2022-030]
+
+Date: 27-Oct-2022
+
+Issue: Proposal form crashed if nominee DOB not entered
+
+Root Cause: Null value not handled in age calculation logic
+
+Resolution: Added null check and fallback logic
+

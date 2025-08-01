@@ -1,0 +1,69 @@
+File: policy_issuance_overview.txt
+
+Domain: Policy Issuance
+Module Description:
+The Policy Issuance module handles the creation of insurance policies after proposal submission. It includes validations, premium calculations, document generation, underwriting decisions, and system triggers for further workflows.
+
+Key Features:
+
+Proposal Validation:
+
+Mandatory fields: Proposer details, insured details, nominee information
+
+Age limits (e.g., Min 18 – Max 65 for term life)
+
+Document upload (KYC, income proof for high-value policies)
+
+Premium Calculation:
+
+Based on sum assured, age, gender, policy term, rider selection
+
+GST and other applicable charges
+
+Underwriting Rules:
+
+Straight Through Processing (STP) for clean cases
+
+Referral to manual underwriter based on conditions (e.g., health history, high sum assured)
+
+Nominee Details:
+
+Name, relationship, date of birth, share %, contact number
+
+Alternate contact (if required)
+
+Issuance Trigger:
+
+Once payment is successful and underwriting is cleared
+
+Triggers policy generation, welcome email, SMS
+
+Generated Documents:
+
+Policy bond PDF
+
+Welcome letter
+
+Benefit illustration
+
+Audit and Versioning:
+
+Any changes post-issuance require endorsements
+
+All actions logged in audit trail
+
+Known Issues / Observations:
+
+Nominee contact field missing in policy PDF
+
+Policy fails to issue if special characters in nominee name
+
+Validation missing for mobile number length in nominee section
+
+Enhancement History:
+
+Apr 2023: Added “Date of Birth” for nominee
+
+Dec 2022: Enabled dynamic riders based on age slab
+
+Jul 2022: Integrated with external payment gateway

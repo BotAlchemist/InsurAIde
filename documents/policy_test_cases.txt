@@ -1,0 +1,69 @@
+File: policy_test_cases.txt
+
+Module: Policy Issuance
+Test Type: Functional Test Cases
+Tested on: Proposal Entry Screen
+
+✅ Test Case 1: Proposer DOB Age Validation
+Input: DOB = 01-Jan-2010
+
+Action: Fill rest of form, click Submit
+
+Expected Result: Error message — "Proposer must be at least 18 years old"
+
+✅ Test Case 2: Nominee Contact Field Validation
+Input: Contact = 99999
+
+Action: Enter in nominee section
+
+Expected Result: Error message — "Enter a valid 10-digit mobile number"
+
+✅ Test Case 3: Nominee Share % Sum
+Input: Two nominees: 60% + 50%
+
+Action: Fill nominee section
+
+Expected Result: Error message — "Total share % must equal 100"
+
+✅ Test Case 4: Alternate Contact Optionality
+Input: Leave alternate contact blank
+
+Action: Submit proposal
+
+Expected Result: Proposal submitted successfully
+
+✅ Test Case 5: Premium Calculation Trigger
+Input: Plan = Term, Sum Assured = ₹10,00,000
+
+Action: Click "Calculate Premium"
+
+Expected Result: Premium displayed correctly (value mocked for now)
+
+✅ Test Case 6: STP vs Manual Underwriting
+Input: Age = 35, SA = ₹20L, Riders = None
+
+Action: Submit
+
+Expected Result: STP triggered
+
+Variation: Age = 50, SA = ₹50L
+
+Expected Result: Case referred to Manual UW
+
+✅ Test Case 7: Mandatory Field Check
+Input: Leave proposer mobile number blank
+
+Action: Submit
+
+Expected Result: Field marked red; message “Mobile Number is required”
+
+✅ Test Case 8: Save Draft Functionality
+Action: Partially fill form → Click “Save Draft”
+
+Expected Result: Data saved; user sees confirmation
+
+✅ Test Case 9: Reset Button
+Action: Enter full form → Click “Reset”
+
+Expected Result: All fields cleared
+

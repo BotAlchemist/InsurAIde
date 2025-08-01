@@ -1,0 +1,56 @@
+File: claims_incident_log.txt
+
+Module: Claims Management
+Document: Production Incident Log
+Scope: Key real-world issues encountered and their root causes
+
+🔥 Incident Log
+[Incident ID: CLM-2024-009]
+
+Date: 18-May-2024
+
+Issue: Claim submitted without mandatory death certificate
+
+Root Cause: UI did not enforce document checklist update for “Death” cause
+
+Resolution: Validation added to block submission if required doc missing
+
+[Incident ID: CLM-2024-002]
+
+Date: 10-Feb-2024
+
+Issue: Duplicate claim filed for same policy and event
+
+Root Cause: Missing check for event date + policy number combination
+
+Resolution: Duplicate claim detection logic implemented
+
+[Incident ID: CLM-2023-016]
+
+Date: 03-Nov-2023
+
+Issue: NEFT payout failed due to invalid IFSC code
+
+Root Cause: Manual entry allowed invalid IFSC not in RBI master
+
+Resolution: IFSC validation integrated with master API
+
+[Incident ID: CLM-2023-005]
+
+Date: 09-Aug-2023
+
+Issue: Payout disbursed to incorrect beneficiary bank account
+
+Root Cause: Human error in entering account number; no secondary check
+
+Resolution: Added dual-entry confirmation for critical bank fields
+
+[Incident ID: CLM-2022-012]
+
+Date: 27-Oct-2022
+
+Issue: Claims stuck in “Under Assessment” for more than 20 days
+
+Root Cause: SLA tracking not enabled; no escalation configured
+
+Resolution: Auto-escalation logic and SLA monitoring added

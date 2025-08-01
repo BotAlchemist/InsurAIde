@@ -1,0 +1,48 @@
+File: claims_enhancement_history.txt
+
+Module: Claims Management
+Document: Enhancement History
+Scope: UI improvements, workflow automation, validation additions
+
+Enhancement Log
+[May 2024]
+
+Enabled image upload support for hospital bills (previously PDF only)
+
+Added on-screen compression for faster uploads
+
+[Feb 2024]
+
+Introduced auto-SLA tracking with color-coded status bar (Green/Amber/Red)
+
+SLA calculated based on claim type and policy conditions
+
+[Dec 2023]
+
+Added “Cause of Claim” dropdown to standardize inputs
+
+Mapped each cause to specific document checklist
+
+[Sep 2023]
+
+Integrated real-time IFSC validation using RBI master API
+
+Enabled auto-fill of bank name to reduce payout errors
+
+[Jul 2023]
+
+Introduced pre-intimation via mobile app (claim draft creation with camera upload)
+
+Integrated GPS tagging of hospital location
+
+[Mar 2023]
+
+Enabled audit log tracking for every action in claim assessment
+
+Viewable in admin console for compliance
+
+[Jan 2023]
+
+Added duplicate claim detection logic: same policy + same date + same cause
+
+Blocks submission with user-friendly message
