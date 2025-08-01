@@ -3,8 +3,8 @@ from dotenv import load_dotenv
 import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import Chroma
-from langchain.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 
 from functools import partial
@@ -121,3 +121,4 @@ Business Requirement:
                 st.write(test_response.content if hasattr(test_response, "content") else test_response)
         else:
             st.warning("No expanded requirement found. Please use the first tab to generate one.")
+
