@@ -2,7 +2,9 @@ streamlit>=1.35.0
 langchain>=0.2.0
 langchain-openai>=0.1.8
 langchain-google-genai>=1.0.1
+sqlite3 >= 3.35.0
 chromadb
 python-dotenv>=1.0.1
 langchain-community>=0.0.30
+
 
